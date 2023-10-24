@@ -30,7 +30,12 @@ return {
 	},
 
 	-- Color scheme
-	{ 'rose-pine/neovim', name = 'rose-pine' },
+	-- { 'rose-pine/neovim', name = 'rose-pine' },
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+	},
 
 
 	-- autopairs for closing brackets
@@ -40,4 +45,3 @@ return {
 		opts = {} -- this is equalent to setup({}) function
 	}
 }
-

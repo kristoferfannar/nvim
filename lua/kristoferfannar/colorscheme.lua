@@ -1,3 +1,3 @@
-require("rose-pine").setup({})
+require("tokyonight").setup({})
 
-vim.cmd('colorscheme rose-pine')
+vim.cmd [[colorscheme tokyonight]]

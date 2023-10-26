@@ -5,7 +5,7 @@ return {
 		tag = '0.1.4',
 		-- or                              , branch = '0.1.x',
 		dependencies = { 'nvim-lua/plenary.nvim' }
-	},
+},
 	"neovim/nvim-lspconfig",
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
@@ -51,4 +51,14 @@ return {
 
 	-- Git stuff
 	{ 'tpope/vim-fugitive', },
+
+	-- Commenting
+	{
+		'numToStr/Comment.nvim',
+		opts = {
+			-- add any options here
+		},
+		lazy = false,
+	},
+
 }

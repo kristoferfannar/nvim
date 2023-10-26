@@ -28,4 +28,10 @@ wk.register({
 	},
 
 
+	g = {
+		name = "git",
+		s = {"<cmd>Git<cr><c-w>H<cmd>vertical resize -40<cr>", "Git status"},
+		a = {"<cmd>Git add<cr>", "Git add"},
+		p = {"<cmd>Git push<cr>", "Git push"},
+	},
 }, { noremap = true, silent = true, prefix = "<leader>" })

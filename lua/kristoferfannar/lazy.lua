@@ -15,18 +15,22 @@ return {
 		run = "make install_jsregexp",
 	},
 
-	"hrsh7th/nvim-cmp",  -- Autocompletion plugin
-	"hrsh7th/cmp-buffer", -- Autocompletion source
-	"hrsh7th/cmp-path",  -- Autocompletion source
-	"hrsh7th/cmp-nvim-lsp", -- Autocompletion source
-	"hrsh7th/cmp-nvim-lua", -- Autocompletion source
-	"hrsh7th/cmp-cmdline", -- Autocompletion source
-	"hrsh7th/cmp-emoji", -- Autocompletion source
+	"hrsh7th/nvim-cmp",      -- Autocompletion plugin
+	"hrsh7th/cmp-buffer",    -- Autocompletion source
+	"hrsh7th/cmp-path",      -- Autocompletion source
+	"hrsh7th/cmp-nvim-lsp",  -- Autocompletion source
+	"hrsh7th/cmp-nvim-lua",  -- Autocompletion source
+	"hrsh7th/cmp-cmdline",   -- Autocompletion source
+	"hrsh7th/cmp-emoji",     -- Autocompletion source
 	"saadparwaiz1/cmp_luasnip", -- Snippets src for nvim-cmp
 
 	{
 		"stevearc/oil.nvim",
 		config = function() require("oil").setup() end
+	},
+	{
+		'nvim-tree/nvim-web-devicons',
+		config = function() require("nvim-web-devicons").setup() end,
 	},
 
 	-- Color scheme

@@ -20,6 +20,7 @@ wk.register({
 		name = "+files",
 		f = { "<cmd>Telescope find_files<cr>", "Local files" },
 		e = { ":Oil --float<cr>", "File explorer" },
+		g = { "<cmd>Telescope live_grep<cr>", "live grep"},
 	},
 
 	l = {

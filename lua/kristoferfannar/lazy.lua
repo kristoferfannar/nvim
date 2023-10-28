@@ -5,11 +5,11 @@ return {
 		tag = '0.1.4',
 		-- or                              , branch = '0.1.x',
 		dependencies = { 'nvim-lua/plenary.nvim' }
-},
+	},
 	"neovim/nvim-lspconfig",
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
-	"rafamadriz/friendly-snippets",
+"rafamadriz/friendly-snippets",
 	{
 		"L3MON4D3/LuaSnip",
 		run = "make install_jsregexp",

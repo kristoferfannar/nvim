@@ -50,7 +50,13 @@ return {
 	},
 
 	-- Git stuff
-	{ 'tpope/vim-fugitive', },
+	{
+		'tpope/vim-fugitive',
+		event = "VeryLazy",
+		config = function()
+			vim.cmd("call FugitiveDetect(getcwd())")
+		end
+	},
 	{ 'sodapopcan/vim-twiggy' }, -- improved git branch view
 
 	-- Commenting

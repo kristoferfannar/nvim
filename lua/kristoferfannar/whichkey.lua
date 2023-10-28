@@ -39,6 +39,6 @@ wk.register({
 		pl = { "<cmd>Git pull<cr>", "Git pull" },
 		l = { "<cmd>Git log<cr><c-w>H<cmd>vertical resize -30<cr>", "Git log" },
 		f = { "<cmd>Git fetch<cr>", "Git fetch" },
-		b = { "<cmd>Git branch<cr><c-w>H<cmd>vertical resize -60<cr>", "Git branch" },
+		b = { "<cmd>Twiggy<cr>", "Git branch" },
 	},
 }, { noremap = true, silent = true, prefix = "<leader>" })

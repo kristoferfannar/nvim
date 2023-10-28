@@ -9,7 +9,7 @@ return {
 	"neovim/nvim-lspconfig",
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
-"rafamadriz/friendly-snippets",
+	"rafamadriz/friendly-snippets",
 	{
 		"L3MON4D3/LuaSnip",
 		run = "make install_jsregexp",
@@ -51,6 +51,7 @@ return {
 
 	-- Git stuff
 	{ 'tpope/vim-fugitive', },
+	{ 'sodapopcan/vim-twiggy' }, -- improved git branch view
 
 	-- Commenting
 	{

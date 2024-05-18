@@ -18,7 +18,7 @@ wk.register({
 	x = { "<cmd>x<cr>", "Write Quit" },
 	f = {
 		name = "+files",
-		f = { "<cmd>Telescope find_files<cr>", "Local files" },
+		f = { "<cmd>Telescope find_files hidden=true<cr>", "Local files" },
 		e = { ":Oil --float<cr>", "File explorer" },
 		g = { "<cmd>Telescope live_grep<cr>", "live grep" },
 	},

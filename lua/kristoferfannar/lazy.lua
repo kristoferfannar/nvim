@@ -29,6 +29,10 @@ return {
 		config = function() require("oil").setup() end
 	},
 	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+	},
+	{
 		'nvim-tree/nvim-web-devicons',
 		config = function() require("nvim-web-devicons").setup() end,
 	},

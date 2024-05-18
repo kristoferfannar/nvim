@@ -14,7 +14,7 @@ wk.register({
 
 wk.register({
 	w = { "<cmd>w<cr>", "Write" },
-	q = { "<cmd>Ex<cr>", "Exit file" },
+	q = { "<cmd>q!<cr>", "Exit file" },
 	x = { "<cmd>x<cr>", "Write Quit" },
 	f = {
 		name = "+files",
@@ -40,5 +40,10 @@ wk.register({
 		l = { "<cmd>Git log<cr><c-w>H<cmd>vertical resize -30<cr>", "Git log" },
 		f = { "<cmd>Git fetch<cr>", "Git fetch" },
 		b = { "<cmd>Twiggy<cr>", "Git branch" },
+	},
+
+	b = {
+		name = "screen split",
+		l = { ":vsplit<cr><c-w>l", "split right" },
 	},
 }, { noremap = true, silent = true, prefix = "<leader>" })

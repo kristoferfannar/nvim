@@ -74,5 +74,5 @@ return {
 	'nvim-lualine/lualine.nvim',
 	dependencies = { 'nvim-tree/nvim-web-devicons' },
 	{ "folke/neodev.nvim",    opts = {} }, -- for vim.api autocompletion within lua
-	"lewis6991/gitsigns.nvim",       -- for git decorations
+	"lewis6991/gitsigns.nvim",          -- for git decorations
 }

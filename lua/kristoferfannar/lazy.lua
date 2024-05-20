@@ -79,4 +79,5 @@ return {
 		end
 
 	},
+	{ "folke/neodev.nvim", opts = {} }, -- for vim.api autocompletion within lua
 }

@@ -1,17 +1,26 @@
 local servers = {
-	"lua_ls",
-	"clangd",
-	"gopls",
-	"tsserver"
+	lua_ls = {
+		settings = {
+			Lua = {
+				completion = {
+					callSnippet = 'Replace',
+				},
+			},
+		},
+	},
+	clangd = {},
+	gopls = {},
+	tsserver = {},
 }
 
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = servers,
+	ensure_installed = vim.tbl_keys(servers or {}),
 	handlers = {
 		function(server_name)
-			require('lspconfig')[server_name].setup({})
+			local server = servers[server_name] or {}
+			require('lspconfig')[server_name].setup(server)
 		end,
 	},
 })

@@ -80,4 +80,5 @@ return {
 
 	},
 	{ "folke/neodev.nvim", opts = {} }, -- for vim.api autocompletion within lua
+	"lewis6991/gitsigns.nvim", -- for git decorations
 }

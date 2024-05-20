@@ -39,6 +39,8 @@ cmp.setup {
 				fallback()
 			end
 		end, { "i", "s" }),
+		['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		['<C-e>'] = cmp.mapping.abort(),              -- hide autocomplete options
 	},
 	sources = cmp.config.sources({
 		{ name = 'luasnip' },

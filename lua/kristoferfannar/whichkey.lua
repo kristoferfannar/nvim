@@ -15,7 +15,7 @@ wk.register({
 wk.register({
 	w = { "<cmd>w<cr>", "Write" },
 	q = { "<cmd>q!<cr>", "Exit file" },
-	x = { "<cmd>x<cr>", "Write Quit" },
+	x = { "<cmd>x!<cr>", "Write Quit" },
 	f = {
 		name = "+files",
 		f = { "<cmd>Telescope find_files<cr>", "Local files" },

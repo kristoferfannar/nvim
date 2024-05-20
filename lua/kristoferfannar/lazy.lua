@@ -71,14 +71,8 @@ return {
 		lazy = false,
 	},
 
-	'vim-airline/vim-airline',
-	{
-		'vim-airline/vim-airline-themes',
-		config = function()
-			vim.g.airline_theme = "deus"
-		end
-
-	},
-	{ "folke/neodev.nvim", opts = {} }, -- for vim.api autocompletion within lua
-	"lewis6991/gitsigns.nvim", -- for git decorations
+	'nvim-lualine/lualine.nvim',
+	dependencies = { 'nvim-tree/nvim-web-devicons' },
+	{ "folke/neodev.nvim",    opts = {} }, -- for vim.api autocompletion within lua
+	"lewis6991/gitsigns.nvim",       -- for git decorations
 }

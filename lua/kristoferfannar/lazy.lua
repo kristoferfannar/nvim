@@ -1,10 +1,10 @@
 return {
 	"folke/which-key.nvim",
 	{
-		'nvim-telescope/telescope.nvim',
-		tag = '0.1.4',
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.4",
 		-- or                              , branch = '0.1.x',
-		dependencies = { 'nvim-lua/plenary.nvim' }
+		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	"neovim/nvim-lspconfig",
 	"williamboman/mason.nvim",
@@ -15,13 +15,13 @@ return {
 		run = "make install_jsregexp",
 	},
 
-	"hrsh7th/nvim-cmp",      -- Autocompletion plugin
-	"hrsh7th/cmp-buffer",    -- Autocompletion source
-	"hrsh7th/cmp-path",      -- Autocompletion source
-	"hrsh7th/cmp-nvim-lsp",  -- Autocompletion source
-	"hrsh7th/cmp-nvim-lua",  -- Autocompletion source
-	"hrsh7th/cmp-cmdline",   -- Autocompletion source
-	"hrsh7th/cmp-emoji",     -- Autocompletion source
+	"hrsh7th/nvim-cmp", -- Autocompletion plugin
+	"hrsh7th/cmp-buffer", -- Autocompletion source
+	"hrsh7th/cmp-path", -- Autocompletion source
+	"hrsh7th/cmp-nvim-lsp", -- Autocompletion source
+	"hrsh7th/cmp-nvim-lua", -- Autocompletion source
+	"hrsh7th/cmp-cmdline", -- Autocompletion source
+	"hrsh7th/cmp-emoji", -- Autocompletion source
 	"saadparwaiz1/cmp_luasnip", -- Snippets src for nvim-cmp
 
 	{
@@ -32,8 +32,10 @@ return {
 		build = ":TSUpdate",
 	},
 	{
-		'nvim-tree/nvim-web-devicons',
-		config = function() require("nvim-web-devicons").setup() end,
+		"nvim-tree/nvim-web-devicons",
+		config = function()
+			require("nvim-web-devicons").setup()
+		end,
 	},
 
 	-- Color scheme
@@ -44,35 +46,39 @@ return {
 		priority = 1000,
 	},
 
-
 	-- autopairs for closing brackets
 	{
-		'windwp/nvim-autopairs',
+		"windwp/nvim-autopairs",
 		event = "InsertEnter",
-		opts = {} -- this is equalent to setup({}) function
+		opts = {}, -- this is equalent to setup({}) function
 	},
 
 	-- Git stuff
 	{
-		'tpope/vim-fugitive',
+		"tpope/vim-fugitive",
 		event = "VeryLazy",
 		config = function()
 			vim.cmd("call FugitiveDetect(getcwd())")
-		end
+		end,
 	},
-	{ 'sodapopcan/vim-twiggy' }, -- improved git branch view
+	{ "sodapopcan/vim-twiggy" }, -- improved git branch view
 
 	-- Commenting
 	{
-		'numToStr/Comment.nvim',
+		"numToStr/Comment.nvim",
 		opts = {
 			-- add any options here
 		},
 		lazy = false,
 	},
 
-	'nvim-lualine/lualine.nvim',
-	dependencies = { 'nvim-tree/nvim-web-devicons' },
-	{ "folke/neodev.nvim",    opts = {} }, -- for vim.api autocompletion within lua
-	"lewis6991/gitsigns.nvim",          -- for git decorations
+	"nvim-lualine/lualine.nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
+	{ "folke/neodev.nvim", opts = {} }, -- for vim.api autocompletion within lua
+	"lewis6991/gitsigns.nvim", -- for git decorations
+
+	{
+		"stevearc/conform.nvim",
+		lazy = false,
+	},
 }

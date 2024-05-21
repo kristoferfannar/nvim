@@ -21,3 +21,5 @@ vim.opt.updatetime = 50
 
 -- allows yanking to copy to clipboard
 vim.opt.clipboard:append("unnamedplus")-- vim.opt.colorcolumn = "80"
+
+vim.opt.signcolumn = "yes"

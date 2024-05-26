@@ -17,7 +17,15 @@ local servers = {
 	gopls = {},
 	tsserver = {},
 	bashls = {},
-	rust_analyzer = {},
+	rust_analyzer = {
+		cmd = {
+			"rustup",
+			"run",
+			"stable",
+			"rust-analyzer",
+		},
+	},
+	pyright = {},
 }
 
 --  This function gets run when an LSP attaches to a particular buffer.

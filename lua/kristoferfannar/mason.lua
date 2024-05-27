@@ -36,6 +36,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 		end
 
+		local cli = vim.lsp.get_client_by_id(event.data.client_id)
+		if cli.server_capabilities.inlayHintProvider then
+			vim.lsp.inlay_hint.enable(true, { bufno = event.buf })
+		end
 		-- Jump to the definition of the word under your cursor.
 		--  To jump back, press <C-t>.
 		map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")

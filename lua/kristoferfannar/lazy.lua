@@ -81,4 +81,5 @@ return {
 		"stevearc/conform.nvim",
 		lazy = false,
 	},
+	"j-hui/fidget.nvim",
 }

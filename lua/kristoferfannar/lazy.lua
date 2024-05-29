@@ -82,4 +82,8 @@ return {
 		lazy = false,
 	},
 	"j-hui/fidget.nvim",
+	{
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
 }

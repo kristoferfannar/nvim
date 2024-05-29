@@ -26,9 +26,8 @@ wk.register({
 	l = {
 		name = "lsp",
 		f = { "<cmd>lua vim.lsp.buf.format { async = true}<cr>", "Format file" },
-		r = { "<cmd>lua vim.lsp.buf.rename { async = true}<cr>", "Rename word" }
+		r = { "<cmd>lua vim.lsp.buf.rename { async = true}<cr>", "Rename word" },
 	},
-
 
 	g = {
 		name = "git",
@@ -46,4 +45,6 @@ wk.register({
 		name = "screen split",
 		l = { ":vsplit<cr><c-w>l", "split right" },
 	},
+
+	d = { "<cmd>TroubleToggle<cr>", "Toggle Diagnostics" },
 }, { noremap = true, silent = true, prefix = "<leader>" })

@@ -39,10 +39,13 @@ return {
 	},
 
 	-- Color scheme
-	-- { 'rose-pine/neovim', name = 'rose-pine' },
+	-- {
+	-- 	"folke/tokyonight.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- },
 	{
-		"folke/tokyonight.nvim",
-		lazy = false,
+		"navarasu/onedark.nvim",
 		priority = 1000,
 	},
 

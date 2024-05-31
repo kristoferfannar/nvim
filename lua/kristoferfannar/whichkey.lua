@@ -39,6 +39,7 @@ wk.register({
 		l = { "<cmd>Git log<cr><c-w>H<cmd>vertical resize -30<cr>", "Git log" },
 		f = { "<cmd>Git fetch<cr>", "Git fetch" },
 		b = { "<cmd>Twiggy<cr>", "Git branch" },
+		t = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle blame" },
 	},
 
 	b = {

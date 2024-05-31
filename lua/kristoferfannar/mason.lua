@@ -1,4 +1,5 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+local InlayHighlight = require("kristoferfannar.colorscheme")
 
 -- add capabilities from cmp_nvim
 capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
@@ -37,8 +38,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 
 		local cli = vim.lsp.get_client_by_id(event.data.client_id)
-		if cli.server_capabilities.inlayHintProvider then
+		if cli ~= nil and cli.server_capabilities.inlayHintProvider then
 			vim.lsp.inlay_hint.enable(true, { bufno = event.buf })
+			InlayHighlight()
 		end
 		-- Jump to the definition of the word under your cursor.
 		--  To jump back, press <C-t>.

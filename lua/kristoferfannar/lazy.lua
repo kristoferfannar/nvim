@@ -81,11 +81,6 @@ return {
 	},
 	{ "folke/neodev.nvim", opts = {} }, -- for vim.api autocompletion within lua
 	"lewis6991/gitsigns.nvim", -- for git decorations
-
-	{
-		"stevearc/conform.nvim",
-		lazy = false,
-	},
 	"j-hui/fidget.nvim",
 	{
 		"folke/trouble.nvim",
@@ -103,4 +98,5 @@ return {
 			-- configurations go here
 		},
 	},
+	"nvimtools/none-ls.nvim",
 }

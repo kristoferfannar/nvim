@@ -99,4 +99,5 @@ return {
 		},
 	},
 	"nvimtools/none-ls.nvim",
+	"mfussenegger/nvim-lint",
 }

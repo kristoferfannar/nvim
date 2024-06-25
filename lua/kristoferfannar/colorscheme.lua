@@ -1,5 +1,5 @@
 require("onedark").setup({
-	style = "warm",
+	style = "dark", -- dark(er), cool(er), warm(er)
 })
 require("onedark").load()
 

@@ -1,6 +1,6 @@
 require("nvim-treesitter.configs").setup({
 	modules = {},
-	ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "go", "javascript", "typescript", "rust" },
+	ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "go", "javascript", "typescript", "rust", "python" },
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = false,

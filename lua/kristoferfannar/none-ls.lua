@@ -2,11 +2,12 @@ local none_ls = require("null-ls")
 
 none_ls.setup({
 	sources = {
-		none_ls.builtins.formatting.biome,
-		none_ls.builtins.formatting.stylua,
+		none_ls.builtins.formatting.biome, -- typescript etc
+		none_ls.builtins.formatting.stylua, -- lua
 		none_ls.builtins.formatting.prettier.with({
-			filetypes = { "markdown" },
+			filetypes = { "markdown" }, -- markdown
 		}),
+		none_ls.builtins.formatting.black, -- python
 	},
 })
 

@@ -57,7 +57,6 @@ wk.register({
 	d = { "<cmd>TroubleToggle<cr>", "Toggle Diagnostics" },
 	["<Tab>"] = {
 		name = "tabs",
-		-- ["\t"] = { "<cmd>tabnew<cr><cmd>Oil<cr>", "new tab" },
 		["<Tab>"] = { create_new_tab, "new tab" },
 		n = { "<cmd>tabnext<cr>", "next tab" },
 		p = { "<cmd>tabprevious<cr>", "previous tab" },

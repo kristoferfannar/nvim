@@ -3,6 +3,12 @@ vim.api.nvim_set_keymap("n", "<space>", "", { noremap = true, silent = true })
 vim.o.timeout = true
 vim.o.timeoutlen = 300
 
+local function create_new_tab()
+	vim.cmd("tablast")
+	vim.cmd("tabnew")
+	vim.cmd("Oil")
+end
+
 local wk = require("which-key")
 
 wk.register({
@@ -16,6 +22,7 @@ wk.register({
 	w = { "<cmd>w<cr>", "Write" },
 	q = { "<cmd>q!<cr>", "Exit file" },
 	x = { "<cmd>x!<cr>", "Write Quit" },
+	X = { "<cmd>xall<cr>", "Write Quit All" },
 	f = {
 		name = "+files",
 		f = { "<cmd>Telescope find_files<cr>", "Local files" },
@@ -48,4 +55,19 @@ wk.register({
 	},
 
 	d = { "<cmd>TroubleToggle<cr>", "Toggle Diagnostics" },
+	["<Tab>"] = {
+		name = "tabs",
+		-- ["\t"] = { "<cmd>tabnew<cr><cmd>Oil<cr>", "new tab" },
+		["<Tab>"] = { create_new_tab, "new tab" },
+		n = { "<cmd>tabnext<cr>", "next tab" },
+		p = { "<cmd>tabprevious<cr>", "previous tab" },
+		["1"] = { "<cmd>tabn 1<cr>", "goto tab 1" },
+		["2"] = { "<cmd>tabn 2<cr>", "goto tab 2" },
+		["3"] = { "<cmd>tabn 3<cr>", "goto tab 3" },
+		["4"] = { "<cmd>tabn 4<cr>", "goto tab 4" },
+		["5"] = { "<cmd>tabn 5<cr>", "goto tab 5" },
+		["6"] = { "<cmd>tabn 6<cr>", "goto tab 6" },
+		["7"] = { "<cmd>tabn 7<cr>", "goto tab 7" },
+		["0"] = { "<cmd>tabfirst<cr>", "goto first tab" },
+	},
 }, { noremap = true, silent = true, prefix = "<leader>" })

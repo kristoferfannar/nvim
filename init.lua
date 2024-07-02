@@ -18,6 +18,7 @@ require("kristoferfannar.set")
 
 local packages = require("kristoferfannar.lazy")
 require("lazy").setup(packages)
+require("kristoferfannar.bufferline")
 require("kristoferfannar.whichkey")
 require("kristoferfannar.telescope")
 require("kristoferfannar.treesitter")

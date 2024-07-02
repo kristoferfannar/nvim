@@ -100,4 +100,13 @@ return {
 	},
 	"nvimtools/none-ls.nvim",
 	"mfussenegger/nvim-lint",
+
+	-- for dev purposes
+	-- { dir = "/Users/kristoferfannar/Desktop/projects/urlopen.nvim" },
+	{
+		"kristoferfannar/urlopen.nvim",
+		config = function()
+			require("urlopen")
+		end,
+	},
 }

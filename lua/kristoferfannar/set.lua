@@ -10,7 +10,6 @@ vim.opt.smartindent = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
--- also set in bufferline.lua
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8

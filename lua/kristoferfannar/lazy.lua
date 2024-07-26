@@ -111,4 +111,10 @@ return {
 	},
 
 	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
+	{
+		"lsig/messenger.nvim",
+		config = function()
+			require("messenger")
+		end,
+	},
 }

@@ -16,7 +16,7 @@ local servers = {
 	},
 	clangd = {},
 	gopls = {},
-	tsserver = {},
+	ts_ls = {},
 	bashls = {},
 	rust_analyzer = {
 		cmd = {
@@ -27,6 +27,10 @@ local servers = {
 		},
 	},
 	pyright = {},
+	emmet_ls = {
+		filetypes = { "html" },
+	},
+	cssls = {},
 }
 
 --  This function gets run when an LSP attaches to a particular buffer.

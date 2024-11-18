@@ -49,6 +49,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		-- Jump to the definition of the word under your cursor.
 		--  To jump back, press <C-t>.
 		map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
+		map("K", vim.lsp.buf.hover, "Hover")
 
 		-- The following two autocommands are used to highlight references of the
 		-- word under your cursor when your cursor rests there for a little while.

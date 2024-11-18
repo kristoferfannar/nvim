@@ -21,7 +21,6 @@ return {
 	"hrsh7th/cmp-nvim-lsp", -- Autocompletion source
 	"hrsh7th/cmp-nvim-lua", -- Autocompletion source
 	"hrsh7th/cmp-cmdline", -- Autocompletion source
-	"hrsh7th/cmp-emoji", -- Autocompletion source
 	"saadparwaiz1/cmp_luasnip", -- Snippets src for nvim-cmp
 
 	{

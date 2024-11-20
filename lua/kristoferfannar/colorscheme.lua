@@ -1,11 +1,6 @@
-require("onedark").setup({
-	style = "dark", -- dark(er), cool(er), warm(er)
-})
-require("onedark").load()
-
 vim.cmd([[colorscheme onedark]])
--- inlay hint highlighting
 
+-- inlay hint highlighting
 function InlayHighlight()
 	if vim.lsp.inlay_hint.is_enabled({}) then
 		vim.cmd([[highlight LspInlayHint guifg=#757880 guibg=#313234]])

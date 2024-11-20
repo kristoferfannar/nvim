@@ -37,14 +37,8 @@ return {
 		end,
 	},
 
-	-- Color scheme
-	-- {
-	-- 	"folke/tokyonight.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- },
 	{
-		"navarasu/onedark.nvim",
+		"olimorris/onedarkpro.nvim",
 		priority = 1000,
 	},
 

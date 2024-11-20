@@ -22,7 +22,7 @@ return {
 	"hrsh7th/cmp-nvim-lua", -- Autocompletion source
 	"hrsh7th/cmp-cmdline", -- Autocompletion source
 	"saadparwaiz1/cmp_luasnip", -- Snippets src for nvim-cmp
-
+	"onsails/lspkind.nvim",
 	{
 		"stevearc/oil.nvim",
 	},

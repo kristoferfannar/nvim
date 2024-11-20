@@ -1,5 +1,5 @@
-local cmp = require 'cmp'
-local luasnip = require 'luasnip'
+local cmp = require("cmp")
+local luasnip = require("luasnip")
 
 local has_words_before = function()
 	unpack = unpack or table.unpack
@@ -7,7 +7,7 @@ local has_words_before = function()
 	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
-cmp.setup {
+cmp.setup({
 
 	-- Snippet engine is not built into cmp
 	snippet = {
@@ -39,48 +39,49 @@ cmp.setup {
 				fallback()
 			end
 		end, { "i", "s" }),
-		['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-		['<C-e>'] = cmp.mapping.abort(),              -- hide autocomplete options
+		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		-- ["<C-e>"] = cmp.mapping.abort(), -- hide autocomplete options
+		["<C-f>"] = cmp.mapping.complete(), -- open the autocomplete window
 	},
 	sources = cmp.config.sources({
-		{ name = 'luasnip' },
-		{ name = 'codeium', keyword_length = 5 },
-		{ name = 'nvim_lsp' },
-		{ name = 'emoji' },
-		{ name = 'nvim_lua' },
-		{ name = 'path',    max_items_count = 4 },
-		{ name = 'buffer',  max_items_count = 4, keyword_length = 5 },
+		{ name = "luasnip" },
+		-- { name = "codeium", keyword_length = 5 },
+		{ name = "nvim_lsp" },
+		-- { name = "emoji" },
+		{ name = "nvim_lua" },
+		{ name = "path", max_items_count = 4 },
+		{ name = "buffer", max_items_count = 4, keyword_length = 5 },
 	}),
 
-	-- formatting = {
-	-- 	format = require('lspkind').cmp_format {
-	-- 		mode = 'symbol_text',
-	-- 		maxwidth = 50,
-	-- 		menu = {
-	-- 			buffer = "[󰈔]",
-	-- 			nvim_lsp = "[]",
-	-- 			nvim_lua = "[]",
-	-- 			path = "[󰉋]",
-	-- 			luasnip = "[󰆦]",
-	-- 			Codeium = "[󰧑]",
-	-- 		},
-	-- 	},
-	-- },
+	formatting = {
+		format = require("lspkind").cmp_format({
+			mode = "symbol_text",
+			maxwidth = 50,
+			menu = {
+				buffer = "[󰈔]",
+				nvim_lsp = "[]",
+				nvim_lua = "[]",
+				path = "[󰉋]",
+				luasnip = "[󰆦]",
+				Codeium = "[󰧑]",
+			},
+		}),
+	},
 
 	experimental = {
-		ghost_text = true
-	}
-}
-
-cmp.setup.cmdline('/', {
-	sources = cmp.config.sources({
-		{ name = 'buffer' }
-	})
+		ghost_text = true,
+	},
 })
 
-cmp.setup.cmdline(':', {
+cmp.setup.cmdline("/", {
 	sources = cmp.config.sources({
-		{ name = 'path' },
-		{ name = 'cmdline' },
-	})
+		{ name = "buffer" },
+	}),
+})
+
+cmp.setup.cmdline(":", {
+	sources = cmp.config.sources({
+		{ name = "path" },
+		{ name = "cmdline" },
+	}),
 })

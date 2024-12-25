@@ -1,3 +1,9 @@
+require("onedarkpro").setup({
+	colors = {
+		git_add = "#98c379",
+	},
+})
+
 vim.cmd([[colorscheme onedark]])
 
 -- inlay hint highlighting

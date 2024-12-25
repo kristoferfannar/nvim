@@ -14,7 +14,15 @@ local servers = {
 			},
 		},
 	},
-	clangd = {},
+	-- clangd = {
+	-- cmd = {
+	-- 	"clangd",
+	-- 	"--header-insertion=never",
+	-- },
+	-- cmd = {
+	-- 	"/opt/homebrew/Cellar/llvm/19.1.2/bin/clangd",
+	-- },
+	-- },
 	gopls = {},
 	ts_ls = {},
 	bashls = {},

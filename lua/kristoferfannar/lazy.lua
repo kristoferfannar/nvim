@@ -134,4 +134,5 @@ return {
 			require("colorizer").setup()
 		end,
 	},
+	"aznhe21/actions-preview.nvim",
 }

@@ -193,6 +193,12 @@ wk.add({
 		remap = false,
 	},
 	{
+		"<leader>la",
+		require("actions-preview").code_actions,
+		desc = "Code actions",
+		remap = false,
+	},
+	{
 		"<leader>q",
 		"<cmd>q!<cr>",
 		desc = "Exit file",

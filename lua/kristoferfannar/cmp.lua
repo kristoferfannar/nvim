@@ -8,7 +8,6 @@ local has_words_before = function()
 end
 
 cmp.setup({
-
 	-- Snippet engine is not built into cmp
 	snippet = {
 		expand = function(args)
@@ -41,7 +40,7 @@ cmp.setup({
 		end, { "i", "s" }),
 		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 		-- ["<C-e>"] = cmp.mapping.abort(), -- hide autocomplete options
-		["<C-f>"] = cmp.mapping.complete(), -- open the autocomplete window
+		["<C-f>"] = cmp.mapping.complete(),          -- open the autocomplete window
 	},
 	sources = cmp.config.sources({
 		{ name = "luasnip" },
@@ -49,8 +48,8 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		-- { name = "emoji" },
 		{ name = "nvim_lua" },
-		{ name = "path", max_items_count = 4 },
-		{ name = "buffer", max_items_count = 4, keyword_length = 5 },
+		{ name = "path",    max_items_count = 4 },
+		{ name = "buffer",  max_items_count = 4, keyword_length = 5 },
 	}),
 
 	formatting = {

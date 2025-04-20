@@ -77,6 +77,7 @@ return {
 	"j-hui/fidget.nvim",
 	{
 		"folke/trouble.nvim",
+		cmd = "Trouble",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 	{
@@ -135,4 +136,18 @@ return {
 		end,
 	},
 	"aznhe21/actions-preview.nvim",
+	{
+		"petertriho/nvim-scrollbar",
+		config = function()
+			require("scrollbar").setup()
+		end,
+	},
+	{
+		"pmizio/typescript-tools.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		opts = {},
+		config = function()
+			require("typescript-tools").setup({})
+		end,
+	},
 }

@@ -14,17 +14,22 @@ local servers = {
 			},
 		},
 	},
-	-- clangd = {
-	-- cmd = {
-	-- 	"clangd",
-	-- 	"--header-insertion=never",
-	-- },
-	-- cmd = {
-	-- 	"/opt/homebrew/Cellar/llvm/19.1.2/bin/clangd",
-	-- },
-	-- },
+	clangd = {
+		capabilities = {
+			offsetEncoding = "utf-16"
+		},
+		-- cmd = {
+		-- 	"clangd",
+		-- 	"--header-insertion=never",
+		-- },
+		cmd = {
+			"/opt/homebrew/opt/llvm/bin/clangd",
+		},
+	},
 	gopls = {},
-	ts_ls = {},
+	-- ts_ls = {
+	-- 	filetypes = { "javascript" },
+	-- },
 	bashls = {},
 	rust_analyzer = {
 		cmd = {
@@ -39,11 +44,23 @@ local servers = {
 		filetypes = { "html" },
 	},
 	cssls = {},
+	tailwindcss = {},
+	ocamllsp = {
+		filetypes = { "ocaml", "dune" },
+	},
 }
 
 --  This function gets run when an LSP attaches to a particular buffer.
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(event)
+		-- ignore *.mll and *.mly files
+		local path = vim.api.nvim_buf_get_name(event.buf)
+		local ext = path:match("%.([^%.]+)$")
+		if ext == "mll" or ext == "mly" then
+			vim.lsp.stop_client(vim.lsp.get_clients())
+			return
+		end
+
 		-- allows us to create keybinding for the lsp
 		local map = function(keys, func, desc)
 			vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
@@ -95,7 +112,11 @@ require("mason-lspconfig").setup({
 	ensure_installed = vim.tbl_keys(servers or {}),
 	handlers = {
 		function(server_name)
-			local server = servers[server_name] or {}
+			local server = servers[server_name]
+			-- only add explicitly defined servers
+			if not server then
+				return
+			end
 			-- extend capabilities with cmp_nvim from above
 			server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
 			require("lspconfig")[server_name].setup(server)

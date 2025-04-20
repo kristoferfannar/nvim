@@ -7,6 +7,29 @@ local has_words_before = function()
 	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
+local formatForTailwindCSS = function(entry, vim_item)
+	if vim_item.kind == "Color" and entry.completion_item.documentation then
+		local hex = entry.completion_item.documentation:match("#(%x%x%x%x%x%x)")
+
+		if hex then
+			-- log_to_file("entry.completion_item.documentation: " .. entry.completion_item.documentation)
+			local group = "Tw_" .. hex
+			if vim.fn.hlID(group) < 1 then
+				vim.api.nvim_set_hl(0, group, { fg = "#" .. hex })
+			end
+			vim_item.kind = "●" -- or "■" or anything
+			vim_item.kind_hl_group = group
+			return vim_item
+		end
+	end
+	vim_item.kind = lspkind.symbolic(vim_item.kind) and lspkind.symbolic(vim_item.kind) or vim_item.kind
+	return vim_item
+end
+
+
+require("luasnip.loaders.from_vscode").load({ paths = {"/Users/kristoferfannar/.config/nvim/lua/kristoferfannar/snippets"}})
+log_to_file("loaded snippets")
+
 cmp.setup({
 	-- Snippet engine is not built into cmp
 	snippet = {
@@ -53,17 +76,26 @@ cmp.setup({
 	}),
 
 	formatting = {
-		format = require("lspkind").cmp_format({
-			mode = "symbol_text",
+		format = lspkind.cmp_format({
+			-- mode = "symbol_text",
 			maxwidth = 50,
-			menu = {
-				buffer = "[󰈔]",
-				nvim_lsp = "[]",
-				nvim_lua = "[]",
-				path = "[󰉋]",
-				luasnip = "[󰆦]",
-				Codeium = "[󰧑]",
-			},
+			-- menu = {
+			-- 	buffer = "[󰈔]",
+			-- 	nvim_lsp = "[]",
+			-- 	nvim_lua = "[]",
+			-- 	path = "[󰉋]",
+			-- 	luasnip = "[󰆦]",
+			-- 	Codeium = "[󰧑]",
+			-- },
+			before = function(entry, vim_item)
+				vim_item.menu = "(" .. vim_item.kind .. ")"
+				vim_item.dup = ({
+					nvim_lsp = 0,
+					path = 0,
+				})[entry.source.name] or 0
+				vim_item = formatForTailwindCSS(entry, vim_item)
+				return vim_item
+			end,
 		}),
 	},
 

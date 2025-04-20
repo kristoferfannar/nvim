@@ -188,7 +188,7 @@ wk.add({
 	},
 	{
 		"<leader>lr",
-		"<cmd>lua vim.lsp.buf.rename { async = true}<cr>",
+		"<cmd>lua vim.lsp.buf.rename()<cr>",
 		desc = "Rename word",
 		remap = false,
 	},
@@ -217,3 +217,9 @@ wk.add({
 		remap = false,
 	},
 })
+
+-- visual mode remaps
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")

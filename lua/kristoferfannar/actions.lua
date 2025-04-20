@@ -3,7 +3,13 @@ require("actions-preview").setup({
 		algorithm = "patience",
 		ignore_whitespace = true,
 	},
-	telescope = require("telescope.themes").get_dropdown({ winblend = 10 }),
+	telescope = require("telescope.themes").get_dropdown({
+		layout_config = {
+			width = 0.8, -- or 0.8, or an absolute integer
+			height = 0.4, -- same idea
+			prompt_position = "top",
+		},
+	}),
 
 	highlight_command = {
 		require("actions-preview.highlight").delta(),

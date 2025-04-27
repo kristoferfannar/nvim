@@ -28,7 +28,6 @@ end
 
 
 require("luasnip.loaders.from_vscode").load({ paths = {"./lua/kristoferfannar/snippets"}})
-log_to_file("loaded snippets")
 
 cmp.setup({
 	-- Snippet engine is not built into cmp

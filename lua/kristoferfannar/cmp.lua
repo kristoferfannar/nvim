@@ -27,7 +27,7 @@ local formatForTailwindCSS = function(entry, vim_item)
 end
 
 
-require("luasnip.loaders.from_vscode").load({ paths = {"/Users/kristoferfannar/.config/nvim/lua/kristoferfannar/snippets"}})
+require("luasnip.loaders.from_vscode").load({ paths = {"./lua/kristoferfannar/snippets"}})
 log_to_file("loaded snippets")
 
 cmp.setup({

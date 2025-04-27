@@ -76,11 +76,6 @@ return {
 	"lewis6991/gitsigns.nvim", -- for git decorations
 	"j-hui/fidget.nvim",
 	{
-		"folke/trouble.nvim",
-		cmd = "Trouble",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
-	{
 		"utilyre/barbecue.nvim",
 		name = "barbecue",
 		version = "*",

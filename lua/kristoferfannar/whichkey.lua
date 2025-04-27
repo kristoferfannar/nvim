@@ -12,14 +12,14 @@ local function create_new_tab()
 end
 
 wk.add({
-	{ "<c-h>", "<c-w>h", desc = "Move cursor left",  remap = false },
-	{ "<c-j>", "<c-w>j", desc = "Move cursor down",  remap = false },
-	{ "<c-k>", "<c-w>k", desc = "Move cursor up",    remap = false },
+	{ "<c-h>", "<c-w>h", desc = "Move cursor left", remap = false },
+	{ "<c-j>", "<c-w>j", desc = "Move cursor down", remap = false },
+	{ "<c-k>", "<c-w>k", desc = "Move cursor up", remap = false },
 	{ "<c-l>", "<c-w>l", desc = "Move cursor right", remap = false },
 })
 
 wk.add({
-	{ "<leader><Tab>", group = "tabs",         remap = false },
+	{ "<leader><Tab>", group = "tabs", remap = false },
 	{
 		"<leader><Tab>0",
 		"<cmd>tabfirst<cr>",
@@ -92,7 +92,7 @@ wk.add({
 		desc = "Write Quit All",
 		remap = false,
 	},
-	{ "<leader>b",     group = "screen split", remap = false },
+	{ "<leader>b", group = "screen split", remap = false },
 	{
 		"<leader>bl",
 		":vsplit<cr><c-w>l",
@@ -101,8 +101,8 @@ wk.add({
 	},
 	{
 		"<leader>d",
-		"<cmd>TroubleToggle<cr>",
-		desc = "Toggle Diagnostics",
+		"ggVGd<cmd>w<cr>",
+		desc = "Delete buffer",
 		remap = false,
 	},
 	{ "<leader>f", group = "files", remap = false },
@@ -124,7 +124,7 @@ wk.add({
 		desc = "live grep",
 		remap = false,
 	},
-	{ "<leader>g", group = "git",   remap = false },
+	{ "<leader>g", group = "git", remap = false },
 	{
 		"<leader>ga",
 		"<cmd>Git add .<cr>",
@@ -218,20 +218,20 @@ wk.add({
 	},
 	{
 		"<leader>y",
-		"mzggVG\"+y`z",
+		'mzggVG"+y`z',
 		desc = "Yank Buffer",
 		remap = false,
 	},
 })
 
 -- highlight selection on yank
-vim.api.nvim_create_autocmd('TextYankPost', {
-  group = vim.api.nvim_create_augroup('highlight_yank', {}),
-  desc = 'Hightlight selection on yank',
-  pattern = '*',
-  callback = function()
-    vim.highlight.on_yank { higroup = 'IncSearch', timeout = 250 }
-  end,
+vim.api.nvim_create_autocmd("TextYankPost", {
+	group = vim.api.nvim_create_augroup("highlight_yank", {}),
+	desc = "Hightlight selection on yank",
+	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 250 })
+	end,
 })
 
 -- visual mode remaps
@@ -239,4 +239,3 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
-

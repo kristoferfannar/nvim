@@ -16,7 +16,7 @@ local servers = {
 	},
 	clangd = {
 		capabilities = {
-			offsetEncoding = "utf-16"
+			offsetEncoding = "utf-16",
 		},
 		-- cmd = {
 		-- 	"clangd",
@@ -46,6 +46,13 @@ local servers = {
 	cssls = {},
 	tailwindcss = {},
 	ocamllsp = {
+		-- finds and uses the ocamllsp in the current opam switch
+		cmd = {
+			"opam",
+			"exec",
+			"--",
+			"ocamllsp",
+		},
 		filetypes = { "ocaml", "dune" },
 	},
 }
@@ -106,6 +113,44 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 	end,
 })
+
+local logfile = vim.fn.stdpath("cache") .. "/nvim-config.log"
+
+local function log(msg)
+	vim.fn.writefile({ msg }, logfile, "a")
+end
+
+-- local default_handler = vim.lsp.handlers["window/showMessage"]
+-- vim.lsp.handlers["window/showMessage"] = function(err, result, ctx, config)
+-- 	if not err and result and result.message then
+-- 		log("showMessage: " .. result.message)
+-- 	end
+-- 	return default_handler(err, result, ctx, config)
+-- end
+--
+-- local default_log = vim.lsp.handlers["window/logMessage"]
+-- vim.lsp.handlers["window/logMessage"] = function(err, result, ctx, config)
+-- 	if not err and result and result.message then
+-- 		log("logMessage: " .. result.message)
+-- 	end
+-- 	return default_log(err, result, ctx, config)
+-- end
+
+local orig_notify = vim.notify
+vim.notify = function(msg, level, opts)
+	-- skip just the ocamlformat syntax-error spam
+	if
+		type(msg) == "string"
+		and msg:match("ocamlformat") -- formatter name
+		and msg:match("syntax error")
+	then -- the specific failure
+		-- log("returning")
+		return -- do nothing → no hit-ENTER
+		-- else
+		-- 	log("not returning")
+	end
+	orig_notify(msg, level, opts) -- everything else behaves normally
+end
 
 require("mason").setup()
 require("mason-lspconfig").setup({

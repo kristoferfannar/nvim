@@ -1,4 +1,4 @@
-require("nvim-treesitter.configs").setup({
+require("nvim-treesitter").setup({
 	modules = {},
 	ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "go", "javascript", "typescript", "rust", "python" },
 

@@ -40,3 +40,9 @@ require("nvim-treesitter").setup({
 		additional_vim_regex_highlighting = false,
 	},
 })
+
+-- this sucks
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'python' },
+  callback = function() vim.treesitter.start() end,
+})
